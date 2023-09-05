@@ -1,7 +1,7 @@
 let score = "33abc"
 
-//console.log(typeof score);
-//console.log(typeof (score));
+//console.log(typeof score); // String
+//console.log(typeof (score)); // String
 
 let valueInNumber = Number(score) // convert string into number
 //console.log(typeof valueInNumber);
@@ -47,6 +47,6 @@ let str3 = str1 + str2
 // console.log("2" + 1 + 1);
 
 let gameCounter = 100
-gameCounter++; //PostFix increment
-++gameCounter; //PreFix increment
-console.log(gameCounter);
+// gameCounter++; //PostFix increment
+// ++gameCounter; //PreFix increment
+// console.log(gameCounter);
