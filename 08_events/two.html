@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learn JavaScript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayShivam = function() {
+        console.log("I'm Shivam")
+    }
+
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "Hi, I'm Shivam"
+    }
+    // setTimeout(changeText, 2000) // Method and also call a API // sayShivam is function reference
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe) // stop timeout
+        console.log("STOPPED")
+    })
+</script>
+</html>
