@@ -39,19 +39,19 @@
     // false = eventbubbling (bottom to top) use e.stopPropagation() to stop bubbling
     //true = capturingmode (Top to bottom)
 
-    // document.getElementById('google').addEventListener('click', function(e){
-    //     console.log('Clicked Google')
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    // }, false)
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log('Clicked Google')
+        // e.preventDefault();
+        e.stopPropagation();
+    }, false)
 
-    document.getElementById('images').addEventListener('click', function(e){
-     console.log(e.target.tagName);
-     if (e.target.tagName === 'IMG') {
-        console.log(e.target.id);
-        let removeIt = e.target.parentNode
-        removeIt.remove()
-     }
-    })
+    // document.getElementById('images').addEventListener('click', function(e){
+    //  console.log(e.target.tagName);
+    //  if (e.target.tagName === 'IMG') {
+    //     console.log(e.target.id);
+    //     let removeIt = e.target.parentNode
+    //     removeIt.remove()
+    //  }
+    // })
 </script>
 </html>
