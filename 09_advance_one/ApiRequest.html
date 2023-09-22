@@ -4,16 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .card {
+            border: 2px solid black;
+        }
+
+        img {
+            width: 100%;   
+        }
+    </style>
 </head>
 <body>
-    Value	State	Description
+    <!-- Value	State	Description
 0	UNSENT	Client has been created. open() not called yet.
 1	OPENED	open() has been called.
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
 3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+4	DONE	The operation is complete. -->
+<div class="card">
+    <img src="" alt="Profile" class="image">
+    <p class="followers"></p>
+    <button onclick="myFunction()">Click!</button>
+</div>
 </body>
 <script>
-    
+    let Image
+    let Follower
+    const requestURL = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // convert string into object
+            console.log(data.followers)
+            Follower = data.followers
+            console.log(data.avatar_url)
+            Image = data.avatar_url
+        }
+    }
+    xhr.send();
+    function myFunction(){
+
+    const image = document.querySelector('.image');
+    image.src = Image;
+
+    const followers = document.querySelector('.followers').innerHTML = Follower;
+}
 </script>
 </html>
